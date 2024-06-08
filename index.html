@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Website</title>
+    <style>
+      body {
+        background-color: #ffe6e6;
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 800px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box; /* Ensures padding is included in the width */
+      }
+
+      h1 {
+        color: #d147a3;
+        margin: 20px 0;
+        font-size: calc(1.5em + 1vw); /* Responsive font size */
+        max-width: 100%; /* Constrains the title within the container */
+        word-wrap: break-word; /* Allows long words to be broken and wrapped */
+      }
+
+      .media-item {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .media-item img,
+      .media-item video {
+        width: 100%;
+        max-width: 400px; /* Fixed width */
+        max-height: 400px; /* Fixed height */
+        border-radius: 10px;
+        margin-bottom: 10px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        object-fit: cover; /* Maintains aspect ratio while filling the dimensions */
+      }
+
+      .media-item p {
+        font-size: 1em;
+        color: #555;
+      }
+
+      .navigation {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+
+      .prev-btn,
+      .next-btn {
+        background-color: #d147a3;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        min-width: 80px; /* Ensures button width */
+      }
+
+      .prev-btn:hover,
+      .next-btn:hover {
+        background-color: #b03a84;
+      }
+
+      .prev-btn {
+        margin-left: 20px;
+      }
+
+      .next-btn {
+        margin-right: 65px;
+        margin-left: 25px;
+      }
+
+      .hidden {
+        visibility: hidden; /* Hides button but maintains layout */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">Happy Birthday!</h1>
+
+      <div class="media-item" id="item-1">
+        <!-- <p>"Ahem Ahem". So girlie, I did something... Let's see</p> -->
+      </div>
+
+      <div class="media-item" id="item-2">
+        <!-- <p>Caption for the first image.</p> -->
+        <img src="./Aarez-1.jpg" alt="Birthday Image 1" />
+      </div>
+
+      <div class="media-item" id="item-3">
+        <!-- <p>Caption for the first video.</p> -->
+        <video controls>
+          <source src="./Aarez-2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="media-item" id="item-4">
+        <p>From meeting in a random ass gc</p>
+        <img src="Aarez-3.jpg" alt="Birthday Image 2" />
+      </div>
+
+      <div class="media-item" id="item-5">
+        <p>To making Blends Together</p>
+        <img src="Aarez-4.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-6">
+        <p>To you taking interest in football and supporting Argentina for me in the wc and witnessing the best moment ever in football with you</p>
+        <img src="Aarez-5.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-7">
+        <p>To you being my favourite Notification</p>
+        <img src="Aarez-6.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-8">
+        <p>To feeling as if my day is incomplete without talking to you</p>
+        <img src="Aarez-7.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-9">
+        <p>Oh and im still so sad and mad at myself for how i screwed up the insta trend thingie so i redid it heheheh</p>
+        <img src="Aarez-8.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-10">
+        <p>Till always, Happy birthday Durriya! Words cannot describe how much you mean to me. </p>
+        <img src="Aarez-9.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-11">
+        <p>Till always, Happy birthday Durriya! Words cannot describe how much you mean to me. </p>
+        <img src="Aarez-10.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-12">
+        <p>Till always, Happy birthday Durriya! Words cannot describe how much you mean to me. </p>
+        <img src="Aarez-11.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-13">
+        <p>Till always, Happy birthday Durriya! Words cannot describe how much you mean to me. </p>
+        <img src="Aarez-12.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-14">
+        <p>Now Please bring your Tose Naina ...</p>
+        <img src="Aarez-13.jpg" alt="Birthday Image 2" />
+      </div>
+      <div class="media-item" id="item-15">
+      </div>
+
+
+      <!-- Add more media items as needed -->
+
+      <div class="navigation">
+        <button class="prev-btn hidden" id="prev-btn">&lt; Prev</button>
+        <button class="next-btn" id="next-btn">Next &gt;</button>
+      </div>
+    </div>
+
+    <script>
+      const mediaItems = document.querySelectorAll(".media-item");
+      const titles = [
+        '"Ahem Ahem". So... I did \n something... Let\'s see...',
+        "Happy Birthday Durriya!!!",
+        "Time for a short \"YEhhhHhhh fAaaaSlayYyYyy\" break",
+        "The Origin Story",
+        "Blending (in) Together",
+        "Football",
+        "Tring Tring",
+        ":)",
+        "Apolocheese",
+        ":')",
+        ":')",
+        ":')",
+        ":')",
+        "",
+        "... to your dms for the cheesy ahh traditional paragraph <3",
+      ];
+      let currentIndex = 0;
+
+      function showItem(index) {
+        mediaItems.forEach((item, i) => {
+          if (i === index) {
+            item.style.display = "flex";
+            setTimeout(() => {
+              const media = item.querySelector("img, video");
+              if (media) {
+                media.style.opacity = 1;
+              }
+            }, 100); // Add a slight delay to ensure the item is visible before starting the fade-in
+          } else {
+            item.style.display = "none";
+            const media = item.querySelector("img, video");
+            if (media) {
+              media.style.opacity = 0;
+            }
+          }
+        });
+        // Update title
+        document.getElementById("title").innerText = titles[index];
+        // Update navigation buttons
+        document
+          .getElementById("prev-btn")
+          .classList.toggle("hidden", index === 0);
+        document
+          .getElementById("next-btn")
+          .classList.toggle("hidden", index === mediaItems.length - 1);
+      }
+
+      document.getElementById("prev-btn").addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          showItem(currentIndex);
+        }
+      });
+
+      document.getElementById("next-btn").addEventListener("click", () => {
+        if (currentIndex < mediaItems.length - 1) {
+          currentIndex++;
+          showItem(currentIndex);
+        }
+      });
+
+      // Initial display
+      showItem(currentIndex);
+    </script>
+  </body>
+</html>
